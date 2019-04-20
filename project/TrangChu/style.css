@@ -1,0 +1,113 @@
+
+/* tin nổi bật */
+
+.tin-noi-bat{
+    width: 100%;
+    height: 600px;
+    margin-bottom: 20px;
+}
+.tin-noi-bat .tin-thu-nhat .title{
+    margin-top: 5px;
+}
+
+.tin-thu-nhat{
+    float: left;
+    width: 650px;
+}
+
+.tin-noi-bat .tin-2-3-4 .tin-2 ul{
+    float: right;
+}
+
+.tin-noi-bat .tin-2-3-4 .tin-3 ul{
+    float: right;
+}
+
+.tin-noi-bat .tin-2-3-4 .tin-4 ul{
+    float: right;
+}
+
+/* xem nhiều */
+
+.xem-nhieu .list-inline li{
+    width: 211px;
+}
+
+.xem-nhieu .list-inline{
+    display: inline-block;
+}
+
+.xem-nhieu .list-inline .list-inline-item .name-title{
+    height: 70px;
+}
+
+.xem-nhieu .list-inline .list-inline-item img{
+    height: 130px;
+    width: 210px;
+}
+
+
+/* mới nhất */
+
+.moi-nhat .list-inline li{
+    width: 212px;
+}
+
+.moi-nhat .list-inline{
+    display: inline-block;
+}
+
+.moi-nhat .list-inline .list-inline-item .name-title{
+    height: 70px;
+}
+
+.moi-nhat .list-inline .list-inline-item img{
+    height: 130px;
+    width: 210px;
+}
+
+
+/* Top 10 chuyên mục */
+
+.top-chuyen-muc .list-inline li{
+    width: 212px;
+    height: 256px;
+}
+
+.top-chuyen-muc .list-inline{
+    display: inline-block;
+}
+
+.top-chuyen-muc .list-inline .list-inline-item .name-title{
+    height: 70px;
+}
+
+.top-chuyen-muc .list-inline .list-inline-item img{
+    height: 130px;
+    width: 210px;
+}
+
+
+
+/* footer */
+.fter .container{
+    padding-top: 20px;
+}
+
+.fter .cpyr{
+    padding-bottom: 10px;
+}
+
+.fter{
+    margin-top: 30px;
+}
+
+/* khác */
+span{
+    font-size: small;
+}
+
+.fa-user{
+    margin-top: 12px;
+}
+

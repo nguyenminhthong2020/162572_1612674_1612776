@@ -1,0 +1,28 @@
+.sign-in-form{
+    width: 420px;
+    height: 500px;
+    margin-top: 40px;
+    margin-left: 320px;
+    background: whitesmoke;
+}
+
+.btn-facebook{
+    background: #3b5a9b;
+}
+
+.btn-google{
+    background: #c9302c;
+}
+
+.li-dky{
+    text-align: center;
+}
+
+.li-dnhap{
+    text-align: center;
+    background:#d8d8d8;
+}
+
+.content-form{
+    margin: 10px;
+}
