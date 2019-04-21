@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easy-ticker.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-danger navbar-dark fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="news.jpg" alt="Online News" width="40px" height="40px">
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navHeaderCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navHeaderCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown style1">
+            <a class="nav-link dropdown-toggle" href="#">
+              <span style="color: yellow; font-size: 18px;">Tin xã hội</span></a>          
+            <div class="dropdown-menu layer2a bg-dark" >
+              <a class="dropdown-item text-white" href="#">Thể thao</a>
+              <a class="dropdown-item text-white" href="#">Du lịch</a>
+              <a class="dropdown-item text-white" href="#">Xã hội</a>
+              <a class="dropdown-item text-white" href="#">Khoa học</a>
+              <a class="dropdown-item text-white" href="#">Văn hóa</a>
+              <a class="dropdown-item text-white" href="#">Giáo dục</a>
+              <a class="dropdown-item text-white" href="#">Pháp luật</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown style2">
+            <a class="nav-link dropdown-toggle" href="#">
+              <span style="color: yellow; font-size: 18px;">Giải trí</span></a>          
+            <div class="dropdown-menu layer2b bg-dark" >
+              <a class="dropdown-item text-white" href="#">Âm nhạc</a>
+              <a class="dropdown-item text-white" href="#">Điện ảnh</a>
+              <a class="dropdown-item text-white" href="#">Hậu trường</a>
+              <a class="dropdown-item text-white" href="#">Phỏng vấn sao</a>
+              </div>
+          </li>
+          <li class="nav-item dropdown style3">
+              <a class="nav-link dropdown-toggle" href="#">
+                <span style="color: yellow; font-size: 18px;">Thời trang</span></a>          
+              <div class="dropdown-menu layer2c bg-dark" >
+                <a class="dropdown-item text-white" href="#">Mặc đẹp</a>
+                <a class="dropdown-item text-white" href="#">Làm đẹp</a>
+                <a class="dropdown-item text-white" href="#">Thời trang sao</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown style4">
+              <a class="nav-link dropdown-toggle" href="#">
+                <span style="color: yellow; font-size: 18px;">Ẩm thực</span></a>          
+              <div class="dropdown-menu layer2d bg-dark" >
+                <a class="dropdown-item text-white" href="#">Địa điểm ăn uống</a>
+                <a class="dropdown-item text-white" href="#">Món ngon</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown style5">
+              <a class="nav-link dropdown-toggle" href="#">
+                <span style="color: yellow; font-size: 18px;">Công nghệ</span></a>          
+              <div class="dropdown-menu layer2e bg-dark" >
+                <a class="dropdown-item text-white" href="#">Mobile</a>
+                <a class="dropdown-item text-white" href="#">AI</a>
+                <a class="dropdown-item text-white" href="#">Smart Home</a>
+              </div>
+            </li>            
+    </ul>
+  </div>
+    <div class="col-sm-3 col-sm-offset-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm">
+            <div class="input-group-append">
+                <button class="btn btn-warning" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-tabs ml-auto bg-dark">
+        <li class="nav-item"> 
+          <a class="nav-link" href="login.html"><i class="fa fa-user" aria-hidden="true"></i> 
+          <span style="color: #C4FFFFFF; font-size: 17px;">Đăng nhập/ký </span>
+         </a>
+        </li>
+    </ul>
+  </div>
+</nav>
+</header>
+    
+    
+  </div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var dd = $('.vticker').easyTicker({
+        direction: 'up',
+        easing: 'easeInOutBack',
+        speed: 'slow',
+        interval: 2000,
+        height: 'auto',
+        visible: 1,
+        mousePause: 0
+      }).data('easyTicker');  
+    });
+    </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/script.js"></script>
+
+
+
+</body>
+</html>
