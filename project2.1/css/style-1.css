@@ -1,0 +1,14 @@
+.tieude:hover{
+	text-decoration: underline;
+}
+
+.tieude{
+	text-align: justify;
+	color: black;
+}
+
+.imgbaiviet{
+	cursor: pointer;
+	height: 200px;
+	width: 260px;
+}
