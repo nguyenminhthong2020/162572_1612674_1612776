@@ -13,6 +13,11 @@ div#headDiv{
       color: red;
       cursor: pointer;
     }
+    a.textHover1 h4:hover{
+      text-decoration: none;
+      color: red;
+      cursor: pointer;
+    }
     span.ctg {
       color: black;
       font-size: 17px;
