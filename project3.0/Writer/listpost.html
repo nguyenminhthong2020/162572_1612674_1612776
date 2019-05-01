@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Writer</title>    
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.easy-ticker.js"></script>
+  <script src="../ckeditor/ckeditor.js"></script>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">    
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- two -->
+
+  <link href="../img/favicon-1.ico" rel="shortcut icon"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/flaticon.css"/>
+  <link rel="stylesheet" href="../css/slicknav.min.css"/>
+  <link rel="stylesheet" href="../css/jquery-ui.min.css"/>
+  <link rel="stylesheet" href="../css/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="../css/animate.css"/>
+  <link rel="stylesheet" href="../css/style1.css"/>
+  <link rel="stylesheet" href="../css/stylemakehands.css">
+  <link rel="stylesheet" type="text/css" href="../css/style-1.css">
+
+  <style>
+  div#headDiv{
+    height: 78px;
+    background-color: #d9534f;
+  }
+  span.beforePic{
+    color : white;
+  }
+  .header-logo{
+    text-align: center;
+  }
+  a.textHover h5:hover{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+  }
+  img:hover {
+   opacity: 0.5;
+   filter: alpha(opacity=50);   /* For IE8 and earlier */
+ }
+ span.ctg {
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Arimo", sans-serif;
+}
+.body-color{
+  background: #f0f1f4;
+}
+.header-color{
+  background: #fff;
+}
+.ts-grid-box {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.08);
+}
+.ts-grid-box.ts-category-title {
+  padding: 18px 30px;
+  background: #0a4a7a;
+}
+.ts-grid-box.ts-category-title .ts-title {
+  margin-bottom: 0;
+}
+.ts-title {
+  margin-bottom: 25px;
+  position: relative;
+  background: #0a4a7a;
+  color: ghostwhite;
+  font-size: 20px;
+  line-height: 21px;
+  font-family: proxima-nova,Helvetica,Arial,sans-serif;
+  letter-spacing: .04em;
+}
+.float-left {float: left!important;
+}
+
+</style>
+</head>
+<body class="body-color">
+  <section>
+    <div class="container-fluid" style="background-color: black">
+      <div class="row">
+        <div class="col-md-12 align-self-center">
+          <div class="header-logo">
+            <a href="#">
+              <img src="../images/logo/logo.png" alt="logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <header class="header-color">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img src="../logo1.jpg" alt="TTS News" width="55px" height="55px" style="margin: -30% -30% -30% -30%">
+          </a>
+        </div>
+        <button class="navbar-toggler btn-danger active" type="button" data-toggle="collapse" data-target="#navHeaderCollapse" >
+          <span class="navbar-toggler-icon">
+
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navHeaderCollapse">
+         <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown style1">
+            <a class="nav-link dropdown-toggle" href="../Writer/writer.html">
+              <span class="ctg">VIẾT BÀI</span></a>
+            </li>
+            <li class="nav-item dropdown style2">
+              <a class="nav-link dropdown-toggle" href="../Writer/listpost.html">
+                <span class="ctg" style="color: #DAA520">DANH SÁCH BÀI VIẾT</span></a>
+              </li>   
+
+            </ul>
+          </div>
+          <div class="col-sm-3 col-sm-offset-3">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Tìm kiếm">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+          <ul class="nav nav-tabs ml-auto bg-dark">
+            <li class="nav-item dropdown style5"> 
+              <a class="nav-link" href=""><i class="fa fa-user" aria-hidden="true"></i> 
+                <span style="color: #C4FFFFFF; font-size: 17px;">&nbsp;Hi, TTS </span></a>
+                <div class="dropdown-menu layer2e bg-dark" >
+                  <a class="dropdown-item text-white" href="../info.html">TTS</a>
+                  <a class="dropdown-item text-white" href="">Đổi mật khẩu</a>
+                  <a class="dropdown-item text-white" href="../index.html">Đăng xuất</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>  
+
+      <!-- Top các bài viết nổi bật -->   
+      <section class="top-letest-product-section">
+        <div class="container">
+          <div class="ts-grid-box clearfix ts-category-title">
+            <h2 class="ts-title float-left"> DANH SÁCH BÀI VIẾT</h2>
+          </div>
+
+          <div class="container bootstrap snippet">
+
+            <div class="row">
+
+              <div class="col-sm-12">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="home">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-01-tab" data-toggle="pill" href="#pills-01" role="tab" aria-controls="pills-01" aria-selected="true">Bài viết chờ xuất bản</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-02-tab" data-toggle="pill" href="#pills-02" role="tab" aria-controls="pills-02" aria-selected="false">Bài viết đã xuất bản</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-03-tab" data-toggle="pill" href="#pills-03" role="tab" aria-controls="pills-03" aria-selected="false">Bài viết bị từ chối</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-04-tab" data-toggle="pill" href="#pills-04" role="tab" aria-controls="pills-04" aria-selected="false">Bài viết đang chờ duyệt</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-01" role="tabpanel" aria-labelledby="pills-01-tab">
+                        <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tiêu đề</th>
+                              <th scope="col">Chuyên mục</th>
+                              <th scope="col">Ngày đăng</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Cô nàng Saya tốt bụng nhưng cực ngầu trong Blood C</td>
+                              <td>Nhân vật Anime</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Mourinho nói về cơ hội của Liverpool trước Barca</td>
+                              <td>Bóng đá</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Chuyên gia khí tượng lý giải nguyên nhân nắng nóng kỷ lục xuất hiện ngay tháng 4</td>
+                              <td>Tin thế giới</td>
+                              <td>21/04/2019</td>
+                            </tr>
+                          </tbody>
+                        </table>                        
+                      </div>
+
+                      <div class="tab-pane fade" id="pills-02" role="tabpanel" aria-labelledby="pills-02-tab">
+                        <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tiêu đề</th>
+                              <th scope="col">Chuyên mục</th>
+                              <th scope="col">Ngày đăng</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mourinho nói về cơ hội của Liverpool trước Barca</td>
+                              <td>Bóng đá</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Chuyên gia khí tượng lý giải nguyên nhân nắng nóng kỷ lục xuất hiện ngay tháng 4</td>
+                              <td>Tin thế giới</td>
+                              <td>21/04/2019</td>
+                            </tr>                            
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Cô nàng Saya tốt bụng nhưng cực ngầu trong Blood C</td>
+                              <td>Nhân vật Anime</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                          </tbody>
+                        </table> 
+                      </div>
+                      <div class="tab-pane fade" id="pills-03" role="tabpanel" aria-labelledby="pills-03-tab">
+                        <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tiêu đề</th>
+                              <th scope="col">Chuyên mục</th>
+                              <th scope="col">Ngày đăng</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Chuyên gia khí tượng lý giải nguyên nhân nắng nóng kỷ lục xuất hiện ngay tháng 4</td>
+                              <td>Tin thế giới</td>
+                              <td>21/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Cô nàng Saya tốt bụng nhưng cực ngầu trong Blood C</td>
+                              <td>Nhân vật Anime</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Mourinho nói về cơ hội của Liverpool trước Barca</td>
+                              <td>Bóng đá</td>
+                              <td>23/04/2019</td>
+                            </tr>                            
+                          </tbody>
+                        </table> 
+                      </div>
+                      <div class="tab-pane fade" id="pills-04" role="tabpanel" aria-labelledby="pills-04-tab">
+                        <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">STT</th>
+                              <th scope="col">Tiêu đề</th>
+                              <th scope="col">Chuyên mục</th>
+                              <th scope="col">Ngày đăng</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Cô nàng Saya tốt bụng nhưng cực ngầu trong Blood C</td>
+                              <td>Nhân vật Anime</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Mourinho nói về cơ hội của Liverpool trước Barca</td>
+                              <td>Bóng đá</td>
+                              <td>23/04/2019</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Chuyên gia khí tượng lý giải nguyên nhân nắng nóng kỷ lục xuất hiện ngay tháng 4</td>
+                              <td>Tin thế giới</td>
+                              <td>21/04/2019</td>
+                            </tr>
+                          </tbody>
+                        </table> 
+                      </div>
+                    </div>              
+                  </div><!--/tab-pane-->
+                </div><!--/tab-content-->
+
+              </div><!--/col-9-->
+            </div><!--/row-->
+          </div><!--container-fluid-->
+        </section>
+        <div style="background-color: black;">
+          <div style="background-color: black;height: 30px;">
+            
+          </div>
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                  <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                      <a href="#">
+                        <span class="fa-stack fa-lg">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#">
+                        <span class="fa-stack fa-lg">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <p class="copyright text-muted" style="text-align: center;font-weight: bold;font-size: 17px; margin-top: 20px;margin-bottom: 30px;">Copyright &copy; Your Website 2019</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            var dd = $('.vticker').easyTicker({
+              direction: 'up',
+              easing: 'easeInOutBack',
+              speed: 'slow',
+              interval: 2000,
+              height: 'auto',
+              visible: 1,
+              mousePause: 0
+            }).data('easyTicker');  
+          });
+        </script>
+        <script src="../js/bootstrap.min.js"></script>
+
+        <!--====== Javascripts & Jquery of Two======-->
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.slicknav.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/jquery.nicescroll.min.js"></script>
+        <script src="../js/jquery.zoom.min.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/script.js"></script>
+
+
+
+      </body>
+      </html>
