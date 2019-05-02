@@ -121,43 +121,45 @@
       <div class="collapse navbar-collapse" id="navHeaderCollapse">
      <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown style1">
-            <a class="nav-link dropdown-toggle" href="#">
+            <a class="nav-link dropdown-toggle" href="index.html">
               <span class="ctg">BÀI VIẾT</span></a>          
             <div class="dropdown-menu layer2a bg-dark" >
-              <a class="dropdown-item text-white" href="#">Đã duyệt & chờ xuất bản</a>
+              <a class="dropdown-item text-white" href="index.html">Đã duyệt & chờ xuất bản</a>
               <a class="dropdown-item text-white" href="indexChuaduyet.html">Đang chờ duyệt</a>
-              <a class="dropdown-item text-white" href="indexDaxuatban.html">Đã xuất bản</a>
+              <a class="dropdown-item text-white" href="#">Đã xuất bản</a>
               <a class="dropdown-item text-white" href="themBaiviet.html">Thêm bài viết mới</a>
             </div>
         </li>
         <li class="nav-item dropdown style2">
-            <a class="nav-link dropdown-toggle" href="">
+            <a class="nav-link dropdown-toggle" href="Data/KHOA HỌC/DanhSachBaiViet.html">
               <span class="ctg">CHUYÊN MỤC</span></a>          
             <div class="dropdown-menu layer2b bg-dark" >
-              <a class="dropdown-item text-white" href="">Quản lý chuyên mục</a>
+              <a class="dropdown-item text-white" href="Data/KHOA HỌC/Công nghệ/DanhSachBaiViet.html">Công nghệ</a>
+              <a class="dropdown-item text-white" href="Data/KHOA HỌC/Đời sống/DanhSachBaiViet.html">Đời sống</a>
+              <a class="dropdown-item text-white" href="Data/KHOA HỌC/Vũ trụ/DanhSachBaiViet.html">Vũ trụ</a>
               </div>
           </li>
           <li class="nav-item dropdown style3">
-              <a class="nav-link dropdown-toggle" href="">
+              <a class="nav-link dropdown-toggle" href="Data/ANIME/DanhSachBaiViet.html">
                 <span class="ctg"">TAGS</span></a>          
               <div class="dropdown-menu layer2c bg-dark" >
-                <a class="dropdown-item text-white" href="">
-                	Quản lý tags
-                </a>
+                <a class="dropdown-item text-white" href="Data/ANIME/Tin tức Anime/DanhSachBaiViet.html">Tin tức Anime</a>
+                <a class="dropdown-item text-white" href="Data/ANIME/Đề cử Anime/DanhSachBaiViet.html">Đề cử Anime</a>
+                <a class="dropdown-item text-white" href="Data/ANIME/Nhân vật/DanhSachBaiViet.html">Nhân vật</a>
             </div>
           </li>
           <li class="nav-item dropdown style4">
               <a class="nav-link dropdown-toggle" href="Data/THỜI SỰ/DanhSachBaiViet.html">
                 <span class="ctg">NGƯỜI DÙNG</span></a>          
               <div class="dropdown-menu layer2d bg-dark" >
-                <a class="dropdown-item text-white" href="Data/THỜI SỰ/Tin trong nước/DanhSachBaiViet.html">Độc giả</a>
-                <a class="dropdown-item text-white" href="Data/THỜI SỰ/Tin trong nước/DanhSachBaiViet.html">Nhân viên</a>
+                <a class="dropdown-item text-white" href="Data/THỜI SỰ/Tin trong nước/DanhSachBaiViet.html">Tin trong nước</a>
+                <a class="dropdown-item text-white" href="Data/THỜI SỰ/Tin thế giới/DanhSachBaiViet.html">Tin thế giới</a>
             </div>
           </li>
-             
+                  
     </ul>
   </div>
-    
+   
 
     <ul class="nav nav-tabs ml-auto bg-primary">
         
@@ -166,6 +168,7 @@
               	<i class="fa fa-user" aria-hidden="true"></i> 
                 <span style="color: #C4FFFFFF; font-size: 18px;">Tài khoản Admin</span></a>          
               <div class="dropdown-menu layer2e bg-dark" >
+                <a class="dropdown-item text-white" href="">Thông tin</a>
                 <a class="dropdown-item text-white" href="">Cài đặt</a>
                 <a class="dropdown-item text-white" href="">Đăng xuất</a>
               </div>
@@ -176,18 +179,16 @@
 </header>  
 
 
-
-
 <div class="container" style="margin-top: 72px;">
-	<!-- <div class="row" style="margin-bottom: 35px;text-align: right;" >
+	<div class="row" style="margin-bottom: 35px;text-align: right;" >
 		<div class="col-md-12">
-			<a href="" class="btn btn-success" style="font-weight: bold;font-size: 23px;">
-			<i class="fa fa-plus"></i>THÊM BÀI VIẾT</a>
+			<a href="themNhanvien.html" class="btn btn-success" style="font-weight: bold;font-size: 23px;">
+			<i class="fa fa-plus"></i>THÊM NHÂN VIÊN</a>
 		</div>
-	</div> -->
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading" style="margin-bottom: 15px;">
-			<h2 style="color: red;">Đã duyệt & chờ xuất bản</h2>
+			<h2 style="color: red;">Nhân viên</h2>
 		</div>
 		<!-- /.panel-heading -->
 		<div class="panel-body">
@@ -196,145 +197,97 @@
 					<thead class="thead-dark" style="font-size: 17px;text-align: left;">
 						<tr>
 							<th>ID</th>
-							<th>Tiêu đề</th>
-							<th>Chuyên mục</th>
-							<th>Ngày tạo</th>
-							<th>Trạng thái</th>
+							<th>Họ tên</th>
+							<th>Giới tính</th>
+              <th>Ngày sinh</th>
+							<th>Email</th>
+							<th>Ngày bắt đầu</th>
+              <th>Chức vụ</th>
+              <th>Chuyên mục</th>
 							<th>Thao tác</th>
 						</tr>
 					</thead>
 					<tbody style="font-size: 16px;background-color: white;">
 						<tr>
 							<td>1</td>
-							<td>Violet Evergarden hé lộ movie mới nhất</td>
-							<td>Tin tức Anime</td>
-							<td>13:00 20/04/2019</td>
-							<td>Đã duyệt</td>
+							<td>Nguyễn Minh Thông</td>
+							<td>nam</td>
+              <td>27/10/1998</td>
+							<td>vegeta.minhthong@gmail.com</td>
+							<td>12:00 02/05/2019</td>
+              <td>Quản trị viên</td>
+              <td>Anime, Thể thao</td>
 							<td>
-							<a href="../Data/ANIME/Tin tức Anime/1.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
+							<a href="" class="btn btn-info">Xem</a>
+              <a href="chinhsuaNhanvien.html" class="btn btn-primary">Sửa</a>
 							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td>V-League cần công nghệ VAR hay trọng tài tốt?</td>
-							<td>Bóng đá</td>
-							<td>12:00 23/04/2019</td>
-							<td>Đã duyệt</td>
-							<td>
-							<a href="../Data/THỂ THAO/Bóng đá/1.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Thiết bị độc nhất vô nhị sản xuất điện từ tuyết rơi</td>
-							<td>Công nghệ</td>
-							<td>14:00 21/04/2019</td>
-							<td>Đã duyệt</td>
-							<td>
-							<a href="../Data/KHOA HỌC/Công nghệ/1.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>6</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>7</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
-						<tr>
-							<td>10</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>
-							<a href="chinhSua.html" class="btn btn-info">Xem</a>
-							<a href="chinhSua.html" class="btn btn-primary">Sửa</a>
-							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
-							</td>
-						</tr>
+						 <tr>
+              <td>2</td>
+              <td>Phạm Đình Sỹ</td>
+              <td>nam</td>
+              <td>27/10/1998</td>
+              <td>vegeta.minhthong@gmail.com</td>
+              <td>12:00 02/05/2019</td>
+              <td>Phóng viên</td>
+              <td>Khoa học, Giải trí</td>
+              <td>
+              <a href="" class="btn btn-info">Xem</a>
+              <a href="chinhsuaNhanvien.html" class="btn btn-primary">Sửa</a>
+              <button class="btn btn-danger">Xóa</button>
+              
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Phan Văn Anh Tuấn</td>
+              <td>nam</td>
+              <td>27/10/1998</td>
+              <td>vegeta.minhthong@gmail.com</td>
+              <td>12:00 02/05/2019</td>
+              <td>Phóng viên</td>
+              <td>Thời sự</td>
+              <td>
+              <a href="" class="btn btn-info">Xem</a>
+              <a href="chinhsuaNhanvien.html" class="btn btn-primary">Sửa</a>
+              <button class="btn btn-danger">Xóa</button>
+              
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Nguyễn Minh A</td>
+              <td>nam</td>
+              <td>27/10/1998</td>
+              <td>vegeta.minhthong@gmail.com</td>
+              <td>12:00 02/05/2019</td>
+              <td>Biên tập viên</td>
+              <td>Anime</td>
+              <td>
+              <a href="" class="btn btn-info">Xem</a>
+              <a href="chinhsuaNhanvien.html" class="btn btn-primary">Sửa</a>
+              <button class="btn btn-danger">Xóa</button>
+              
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Nguyễn Minh B</td>
+              <td>nam</td>
+              <td>27/10/1998</td>
+              <td>vegeta.minhthong@gmail.com</td>
+              <td>12:00 02/05/2019</td>
+              <td>Biên tập viên</td>
+              <td>Thời sự</td>
+              <td>
+              <a href="" class="btn btn-info">Xem</a>
+              <a href="chinhsuaNhanvien.html" class="btn btn-primary">Sửa</a>
+              <button class="btn btn-danger">Xóa</button>
+              
+              </td>
+            </tr>
 					</tbody>
 				</table>
 			</div>
