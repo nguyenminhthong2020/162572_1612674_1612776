@@ -1,0 +1,53 @@
+<section class="top-letest-product-section">
+		<div class="container">
+			<div class="ts-grid-box clearfix ts-category-title">
+				<h2 class="ts-title float-left">:: Bài viết nổi bật</h2>
+			</div>
+			<div class="row">				
+                    {{#each listTopPost}}
+					<div class="col-lg-6 col-sm-6 pr-lg-1">
+                    	<div class="product-item pb-5">
+						<span class="beforePic"></span>
+						<a href="/posts/{{id}}"><img class="imgbaiviet" src="{{avatar}}" style="width: 75%;">
+						</a>
+						<div class="card" style="border: none;width: 75%;">
+							<div class="card-body">
+						    <a href="/posts/{{id}}" target="_self"
+						    class="textHover"><h5 class="card-title tieude">
+						    	{{title}}
+						    	</h5></a>
+						    <p class="card-text">{{post_date}}</p>
+						    <h6 class="card-subtitle mb-2 text-muted">
+						    <a href="/categories/{{category_id}}"> Chuyên mục: {{category_id}}</a>
+						    </h6>
+						  </div>
+						</div>
+						</div>
+					</div>
+                    {{/each}}
+			</div>			
+		</div>
+</section>
+
+<section class="product-filter-section">
+		<div class="container">
+			<div class="ts-grid-box clearfix ts-category-title">
+				<h2 class="ts-title float-left">:: Xem nhiều</h2>
+			</div>
+			<div class="product-slider owl-carousel">
+				{{#each listTopView}}
+				<div class="product-item">
+					<h3 class="text-warning">{{math @index "+" 1}}</h3>
+					<a><img class="imgbaiviet" src={{avatar}}></a>
+					<div class="card" style="border: none;">
+					  <div class="card-body">
+					    <a href="/posts/{{id}}" class="textHover"><h5 class="card-title tieude">{{title}}</h5></a>
+					    <p class="card-text">{{post_date}}></p>
+					    <a href="/categories/{{category_id}}"> Chuyên mục: {{category_id}}</a>
+					  </div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+</section>
