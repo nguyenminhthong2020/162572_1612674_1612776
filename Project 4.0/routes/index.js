@@ -7,7 +7,7 @@ var router=express.Router();
 
 // mapping trang danh mục, bài viết
 router.use('/categories',require(__dirname+'/categories'));
-//router.use('/posts',require(__dirname+'/posts'));
+router.use('/posts',require(__dirname+'/posts'));
 
 // mapping trang admin, editor, writter
 

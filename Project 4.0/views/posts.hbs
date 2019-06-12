@@ -1,0 +1,136 @@
+{{#each thisPost}}
+<section>
+    <div class="container">
+      <div class="section-title">
+        <h1 style="text-align: center; color: black;">{{title}}</h1>
+      </div>
+      <div style="text-align: center;">
+            <br><br>
+            <a class="btn btn-danger" href="/" role="button">Quay về trang chủ</a>
+            <br><br><br><br>
+      </div>
+      <table class="table table-borderless table-responsive" id="tableInfo">
+        <tbody style="font-size: 17px;">
+          <tr>
+            <td><strong>NGÀY ĐĂNG:</strong></td>
+            <td>{{shortDate}}</td>
+          </tr>
+          <tr>
+            <td><strong>CHUYÊN MỤC:</strong></td>
+            <td><a href="/categories/{{category_id}}"><strong>{{cateName}}</strong></a></td>
+          </tr>
+          <tr>
+            <td><strong>TAGS:</strong></td>
+            <td><a href=""><span class="badge badge-success">Missing Tags</span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br><br><br><br>
+      <h5>{{summary_content}}</h5><br>
+      <img class="imgbaiviet" src={{avatar}} style="width: 80%;height: 400px;">
+      <p>{{content}}</p>
+      <img class="imgbaiviet" src={{thumb_img}} style="width: 80%;height: 400px;">
+      <br><br><br>
+            <div style="text-align: center;">
+            <a class="btn btn-danger" href="/" role="button">Quay về trang chủ</a>   
+          </div>
+            <br><br><br><br><br><br>
+             <div id="comment" style="background-color:#D8D8D8FF; width: 60%;">
+                        <h4 style="color: blue;">Bình luận của bạn : </h4>
+                        <br>
+                        <div>
+                            <textarea class="form-control" rows="auto" id="comment"></textarea>
+                            <br>
+                            <button class="btn-success" type="button" id="button-send"
+                            style="width: 20%;height: 45px;"><span style="font-size: 20px;">Gửi</span></button>
+
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="danh-sach-binh-luan" style="margin-bottom:15px;width: 60%;">
+                        <h4 style="margin-top:15px;color: blue;">Bình luận khác:</h4>
+                        <br>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6 style="color:red;">
+                                    <i class="fa fa-user" style="margin-right: 8px;color:lightgray;"></i>
+                                    Nguyễn Minh Thông
+                                </h6><br>
+                                <h6>Hay quá</h6><br>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h6>
+                                            100
+                                        </h6>
+                                    </li>
+                                </ul>
+                                <span>23-4-20119 16:15</span>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 style="color:red;">
+                                    <i class="fa fa-user" style="margin-right: 8px;color:lightgray;"></i>
+                                    Phạm Đình Sỹ
+                                </h6><br>
+                                <h6>Ad vui tính</h6><br>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h6>
+                                            40
+                                        </h6>
+                                    </li>
+                                </ul>
+                                <span>24-4-20119 16:15</span>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 style="color:red;">
+                                    <i class="fa fa-user" style="margin-right: 8px;color:lightgray;"></i>
+                                    Phan Văn Anh Tuấn
+                                </h6><br>
+                                <h6>Tui thấy bài viết này hay quá. Thanks ad tốt bụng</h6><br>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h6>
+                                            120
+                                        </h6>
+                                    </li>
+                                </ul>
+                                <span>24-4-20119 16:15</span>
+                            </li>
+                        </ul>
+                    </div>           
+      </div>
+  </section>
+  {{/each}}
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h3 style="text-align: left; color: blue;">Cùng chuyên mục</h3>
+      </div>
+      <br>
+      <div class="product-slider owl-carousel">
+          {{#each listPost}}
+        <div class="product-item">
+          <a><img class="imgbaiviet" src={{avatar}}></a>
+          <div class="card" style="border: none;">
+            <div class="card-body">
+              <a href="#"><h5 class="card-title tieude">{{title}}</h5></a>
+              <p class="card-text">{{shortDate}}</p>
+              <h6 class="card-subtitle mb-2 text-muted">Chuyên mục:</h6>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
