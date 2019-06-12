@@ -2,10 +2,11 @@ var express= require('express');
 var index = require('../models/index.model'); // không dùng =>thay thế bằng các model cụ thể
 var postdb=require('../models/post.model');
 var catedb=require('../models/category.model');
+var dateFormat = require('dateformat');
 var router=express.Router();
 
 // mapping trang danh mục, bài viết
-//router.use('/categories',require(__dirname+'/categories'));
+router.use('/categories',require(__dirname+'/categories'));
 //router.use('/posts',require(__dirname+'/posts'));
 
 // mapping trang admin, editor, writter
@@ -26,22 +27,28 @@ router.get('/',(req,res,next)=>{
         cateAll])
         .then( values =>{
             var listTopPost=values[0];
-            // Lấy ra (tên) chuyên mục từ category_id
+            // Lấy ra (tên) chuyên mục từ category_id, định dạng ngày chuẩn
             for (const item of listTopPost) {
                 var itsCate = values[4].filter(x => x.id == item.category_id);
                 item['itsCate'] = itsCate;
+                var shortDate = dateFormat(item.post_date, "fullDate");
+                item['shortDate'] = shortDate;
             }
             var listTopView=values[1];
-            // Lấy ra (tên) chuyên mục từ category_id
+            // Lấy ra (tên) chuyên mục từ category_id, định dạng ngày chuẩn
             for (const item of listTopView) {
                 var itsCate1 = values[4].filter(x => x.id == item.category_id);
-                item['itsCate'] = itsCate;
+                item['itsCate'] = itsCate;                
+                var shortDate = dateFormat(item.post_date, "fullDate");
+                item['shortDate'] = shortDate;
             }
             var listNewPost=values[2];
-             // Lấy ra (tên) chuyên mục từ category_id
+             // Lấy ra (tên) chuyên mục từ category_id, định dạng ngày chuẩn
              for (const item of listNewPost) {
                 var itsCate1 = values[4].filter(x => x.id == item.category_id);
                 item['itsCate'] = itsCate;
+                var shortDate = dateFormat(item.post_date, "fullDate");
+                item['shortDate'] = shortDate;
             }
             var listTopCate=values[3];
             var parentMenu = [];
