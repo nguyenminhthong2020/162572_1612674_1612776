@@ -18,7 +18,7 @@
 						    	</h5></a>
 						    <p class="card-text">{{post_date}}</p>
 						    <h6 class="card-subtitle mb-2 text-muted">
-						    <a href="/categories/{{category_id}}"> Chuyên mục: {{category_id}}</a>
+						    <a href="/categories/{{category_id}}">{{#each itsCate}}{{name}}{{/each}} </a>
 						    </h6>
 						  </div>
 						</div>
@@ -43,7 +43,7 @@
 					  <div class="card-body">
 					    <a href="/posts/{{id}}" class="textHover"><h5 class="card-title tieude">{{title}}</h5></a>
 					    <p class="card-text">{{post_date}}></p>
-					    <a href="/categories/{{category_id}}"> Chuyên mục: {{category_id}}</a>
+					    <a href="/categories/{{category_id}}">{{#each itsCate}}{{name}}{{/each}}</a>
 					  </div>
 					</div>
 				</div>

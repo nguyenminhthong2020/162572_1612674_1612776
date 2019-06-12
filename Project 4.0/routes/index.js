@@ -26,12 +26,23 @@ router.get('/',(req,res,next)=>{
         cateAll])
         .then( values =>{
             var listTopPost=values[0];
+            // Lấy ra (tên) chuyên mục từ category_id
+            for (const item of listTopPost) {
+                var itsCate = values[4].filter(x => x.id == item.category_id);
+                item['itsCate'] = itsCate;
+            }
             var listTopView=values[1];
+            // Lấy ra (tên) chuyên mục từ category_id
+            for (const item of listTopView) {
+                var itsCate1 = values[4].filter(x => x.id == item.category_id);
+                item['itsCate'] = itsCate;
+            }
             var listNewPost=values[2];
             var listTopCate=values[3];
             var parentMenu = [];
             if (values[4].length > 0) {
                 parentMenu = values[4].filter(x => x.parent_id == 0);
+                // Lấy ra các chuyên mục con
                 for (const item of parentMenu) {
                     var childrenMenu = values[4].filter(x => x.parent_id == item.id);
                     item['childs'] = childrenMenu;
