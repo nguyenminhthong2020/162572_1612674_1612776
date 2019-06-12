@@ -28,7 +28,7 @@ var getTopView = () => {
 }
 var getNewPost = () => {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT * FROM posts WHERE posts.post_date + interval 10 day > curdate() + 7`;
+        var sql = `SELECT * FROM posts WHERE posts.post_date + interval 10 day > curdate() + 30`;
         var conn = db.getConn();
         conn.connect();
         conn.query(sql, (err, value) => {

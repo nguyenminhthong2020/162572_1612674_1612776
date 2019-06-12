@@ -38,6 +38,11 @@ router.get('/',(req,res,next)=>{
                 item['itsCate'] = itsCate;
             }
             var listNewPost=values[2];
+             // Lấy ra (tên) chuyên mục từ category_id
+             for (const item of listNewPost) {
+                var itsCate1 = values[4].filter(x => x.id == item.category_id);
+                item['itsCate'] = itsCate;
+            }
             var listTopCate=values[3];
             var parentMenu = [];
             if (values[4].length > 0) {

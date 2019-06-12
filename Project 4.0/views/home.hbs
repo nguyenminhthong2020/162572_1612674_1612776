@@ -55,119 +55,43 @@
 <section class="product-filter-section">
 		<div class="container">
 			<div class="ts-grid-box clearfix ts-category-title">
-				<h2 class="ts-title float-left">:: Các chuyên mục nổi bật nhất</h2>
+				<h2 class="ts-title float-left">:: Mới nhất</h2>
 			</div>
 			<div class="product-slider owl-carousel">
+				{{#each listNewPost}}
 				<div class="product-item">
-					<img src="iconNumber/one.png" style="width: 20%;height: 50px;">
-					<a href="Data/ANIME/Tin tức Anime/1.html"><img class="imgbaiviet" src="Data/ANIME/Tin tức Anime/1.2.jpg"></a>
+					<h3 class="text-warning">{{math @index "+" 1}}</h3>
+					<a><img class="imgbaiviet" src={{avatar}}></a>
 					<div class="card" style="border: none;">
 					  <div class="card-body">
-					    <a href="Data/ANIME/Tin tức Anime/1.html" class="textHover"><h5 class="card-title tieude">Violet Evergarden hé lộ movie mới nhất</h5></a>
-					    <p class="card-text">13:00 20/04/2019</p>
-					    <a href="Data/ANIME/Tin tức Anime/DanhSachBaiViet.html">Tin tức Anime</a>
+					    <a href="/posts/{{id}}" class="textHover"><h5 class="card-title tieude">{{title}}</h5></a>
+					    <p class="card-text">{{post_date}}></p>
+					    <a href="/categories/{{category_id}}">{{#each itsCate}}{{name}}{{/each}}</a>
 					  </div>
 					</div>
 				</div>
-				<div class="product-item">
-					<img src="iconNumber/two.png" style="width: 20%;height: 50px;">
-					<a href="Data/KHOA HỌC/Công nghệ/1.html"><img class="imgbaiviet" src="Data/KHOA HỌC/Công nghệ/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/KHOA HỌC/Công nghệ/1.html" class="textHover"><h5 class="card-title tieude">Thiết bị độc nhất vô nhị sản xuất điện từ tuyết rơi</h5></a>
-					    <p class="card-text">Thiết bị độc nhất vô nhị sản xuất điện từ tuyết rơi</p>
-					    <a href="Data/KHOA HỌC/Công nghệ/DanhSachBaiViet.html">Công nghệ</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/three.png" style="width: 20%;height: 50px;">
-					<a href="Data/THỂ THAO/Bóng đá/1.html"><img class="imgbaiviet" src="Data/THỂ THAO/Bóng đá/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/THỂ THAO/Bóng đá/1.html" class="textHover"><h5 class="card-title tieude">V-League cần công nghệ VAR hay trọng tài tốt?</h5></a>
-					    <p class="card-text">12:00 23/04/2019</p>
-					    <a href="Data/THỂ THAO/Bóng đá/DanhSachBaiViet.html">Bóng đá</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/four.png" style="width: 20%;height: 50px;">
-					<a><img class="imgbaiviet" src="Data/THỜI SỰ/Tin trong nước/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/THỜI SỰ/Tin trong nước/1.html" class="textHover"><h5 class="card-title tieude">Khởi tố ông Nguyễn Hữu Linh vụ dâm ô bé gái trong thang máy</h5></a>
-					    <p class="card-text">16:39 21/04/2019</p>
-					    <a href="Data/THỜI SỰ/Tin trong nước/DanhSachBaiViet.html">Tin trong nước</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/five.png" style="width: 20%;height: 50px;">
-					<a href="Data/GIẢI TRÍ/Phim ảnh/1.html"><img class="imgbaiviet" src="Data/GIẢI TRÍ/Phim ảnh/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/GIẢI TRÍ/Phim ảnh/1.html" class="textHover"><h5 class="card-title tieude">Cánh báo chí quốc tế rơi nước mắt vì bom tấn Avengers: Endgame</h5></a>
-					    <p class="card-text">13:00 23/04/2019</p>
-					    <a href="Data/GIẢI TRÍ/Phim ảnh/DanhSachBaiViet.html">Phim ảnh</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/six.png" style="width: 20%;height: 50px;">
-					<a href="Data/GIẢI TRÍ/Hậu trường sao/1.html"><img class="imgbaiviet" src="Data/GIẢI TRÍ/Hậu trường sao/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/GIẢI TRÍ/Hậu trường sao/1.html" class="textHover"><h5 class="card-title tieude">Vợ và con gái Dương Ngọc Thái khóc trong họp báo</h5></a>
-					    <p class="card-text">10:00 23/04/2018</p>
-					    <a href="Data/GIẢI TRÍ/Hậu trường sao/DanhSachBaiViet.html">Hậu trường sao</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/seven.png" style="width: 20%;height: 50px;">
-					<a><img class="imgbaiviet" src="Data/ANIME/Đề cử Anime/2.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/ANIME/Đề cử Anime/2.html" class="textHover"><h5 class="card-title tieude">MUSHOKU TENSEI - ĐẦU THAI VÀO THẾ GIỚI PHÉP THUẬT</h5></a>
-					    <p class="card-text">23:00 24/04/2019</p>
-					    <a href="Data/ANIME/Đề cử Anime/DanhSachBaiViet.html">Đề cử Anime</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/eight.png" style="width: 20%;height: 50px;">
-					<a href="Data/THỜI SỰ/Tin thế giới/2.html"><img class="imgbaiviet" src="Data/THỜI SỰ/Tin thế giới/2.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/THỜI SỰ/Tin thế giới/2.html" class="textHover"><h5 class="card-title tieude">Động đất mạnh kéo theo hơn 400 dư chấn ở Philippines, 11 người chết</h5></a>
-					    <p class="card-text">14:00 23/04/2019</p>
-					    <a href="Data/THỜI SỰ/Tin thế giới/DanhSachBaiViet.html">Tin thế giới</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/nine.png" style="width: 20%;height: 50px;">
-					<a href="Data/GIẢI TRÍ/Âm nhạc/2.html"><img class="imgbaiviet" src="Data/GIẢI TRÍ/Âm nhạc/2.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/GIẢI TRÍ/Âm nhạc/2.html" class="textHover"><h5 class="card-title tieude">Chi Pu ra mắt MV 'Anh ơi ở lại', xóa tan mọi nghi ngờ về khả năng ca hát</h5></a>
-					    <p class="card-text">18:00 24/04/2018</p>
-					    <a href="Data/GIẢI TRÍ/Âm nhạc/DanhSachBaiViet.html">Âm nhạc</a>
-					  </div>
-					</div>
-				</div>
-				<div class="product-item">
-					<img src="iconNumber/ten.png" style="width: 20%;height: 50px;">
-					<a href="Data/KHOA HỌC/Đời sống/1.html"><img class="imgbaiviet" src="Data/KHOA HỌC/Đời sống/1.jpg"></a>
-					<div class="card" style="border: none;">
-					  <div class="card-body">
-					    <a href="Data/KHOA HỌC/Đời sống/1.html" class="textHover"><h5 class="card-title tieude">Dấu hiệu cảnh báo bạn bị ung thư dạ dày</h5></a>
-					    <p class="card-text">12:00 24/04/2019</p>
-					    <a href="Data/KHOA HỌC/Đời sống/DanhSachBaiViet.html">Đời sống</a>
-					  </div>
-					</div>
-				</div>
+				{{/each}}
 			</div>
 		</div>
-	</section>
+</section>
+
+<section class="product-filter-section">
+		<div class="container">
+			<div class="ts-grid-box clearfix ts-category-title">
+				<h2 class="ts-title float-left">:: Chuyên mục nổi bật</h2>
+			</div>
+			<div class="product-slider owl-carousel">
+				{{#each topCate}}
+				<div class="product-item">
+					<h3 class="text-warning">{{math @index "+" 1}}</h3>
+					<div class="card" style="border: none;">
+					  <div class="card-body">
+					    <a href="/posts/{{id}}" class="textHover"><h5 class="card-title tieude">{{name}}</h5></a>
+					    <p class="card-text">{{update_at}}></p>
+					  </div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+</section>
