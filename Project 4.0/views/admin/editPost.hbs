@@ -1,0 +1,96 @@
+<section class="top-letest-product-section">
+        <div class="container">
+          <div class="ts-grid-box clearfix ts-category-title">
+            <h2 class="ts-title float-left"> CHỈNH SỬA</h2>
+          </div>
+
+          <div class="container bootstrap snippet">
+            <div class="row">
+              <div class="col-sm-3 text-center"><h3 class="text-muted">Ảnh mô tả</h3></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"><!--left col-->              
+
+                <div class="text-center">
+                  <img src="../noImage.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <label class="btn btn-default btn-file bg-info mt-2">Thêm ảnh..<input type="file" style="display: none;"></label>        
+                </div>
+
+              </div><!--/col-3-->
+              <div class="col-sm-9">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="home">
+                    <form method="POST">
+                      <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_title"><h4 class="text-muted">&nbsp;Tiêu đề</h4></label>
+                          <textarea type="text" class="form-control" id="p_title" name="p_title" placeholder="Tiêu đề">{{post.title}}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_category"><h4 class="text-muted">&nbsp;Chuyên mục</h4></label><br>
+                          <select name="p_category" class="form-control">
+                            <option value= {{post.category_id}}selected>{{itsCateName}}</option>
+                            {{#each categories}}
+                            <option value={{id}}>{{name}}</option>
+                            {{/each}}
+                          </select> 
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                         <label for="p_short"><h4 class="text-muted">&nbsp;Tóm tắt</h4></label>
+                         <textarea type="text" class="form-control" id="p_short" name="p_short" placeholder="Tóm tắt">{{post.summary_content}}</textarea>
+                       </div>
+                     </div>
+                     <div class="form-group">
+                      <div class="col-xs-6">
+                       <label for="p_content"><h4 class="text-muted">&nbsp;Nội dung</h4></label>
+                       <textarea id="p_content" name="p_content" cols="80" rows="10">{{post.content}}
+                       </textarea>
+                       <script>
+                        CKEDITOR.replace('p_content');
+                      </script>    
+                    </div>
+                  </div>
+                  <div class="form-group">
+                        <div class="col-xs-6">
+                         <label for="p_avatar"><h4 class="text-muted">&nbsp;Ảnh đại diện</h4></label>
+                         <textarea type="text" class="form-control" id="p_avatar" name="p_avatar" placeholder="Ảnh đại diện">{{post.avatar}}</textarea>
+                </div><br>
+                <div class="form-group">
+                        <div class="col-xs-6">
+                         <label for="p_img"><h4 class="text-muted">&nbsp;Ảnh minh họa</h4></label>
+                         <textarea type="text" class="form-control" id="p_img" name="p_img" placeholder="Ảnh minh họa">{{post.thumb_img}}</textarea>
+                  </div><br>
+                  <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_tag"><h4 class="text-muted">&nbsp;Tags</h4></label><br>
+                          <select name="p_tag" class="form-control">
+                            <option value="unselect" selected="selected">Tags</option>
+                            {{#each tags}}
+                            <option value={{math @index "+" 1}}>{{name}}</option>
+                            {{/each}}
+                          </select> 
+                        </div>
+                      </div>                                
+
+                  <div class="form-group">
+                   <div class="col-xs-12">
+                    <br>
+                    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                  </div>
+                </div>
+              </form>
+              
+            </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+      </div><!--/row-->
+    </div><!--container-fluid-->
+  </section>

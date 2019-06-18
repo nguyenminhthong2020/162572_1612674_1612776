@@ -1,0 +1,46 @@
+<div class="container" style="margin-top: 72px;">
+	<!-- <div class="row" style="margin-bottom: 35px;text-align: right;" >
+		<div class="col-md-12">
+			<a href="" class="btn btn-success" style="font-weight: bold;font-size: 23px;">
+			<i class="fa fa-plus"></i>THÊM BÀI VIẾT</a>
+		</div>
+	</div> -->
+	<div class="panel panel-default">
+		<div class="panel-heading" style="margin-bottom: 15px;">
+			<h2 style="font-weight: bold; color: #029a00">{{fullStatus}}</h2>
+		</div>
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead class="thead-dark" style="font-size: 14px;text-align: left;">
+						<tr>
+							<th style="width: 5%">ID</th>
+							<th style="width: 35%">Tiêu đề</th>
+							<th style="width: 10%">Chuyên mục</th>
+							<th style="width: 10%">Ngày tạo</th>
+							<th style="width: 10%">Trạng thái</th>
+							<th style="width: 30%">Thao tác</th>
+						</tr>
+					</thead>
+					<tbody style="font-size: 13px;background-color: white;">
+                    {{#each listPost}}
+						<tr>
+							<td>{{math @index "+" 1}}</td>
+							<td>{{title}}</td>
+							<td>{{#each itsCate}}{{name}}{{/each}}</td>
+							<td>{{shortDate}}</td>
+							<td>{{shortStatus}}</td>
+							<td>
+							<a href="/posts/{{id}}" class="btn btn-info">Xem</a>
+							<a href="../edit-post/{{id}}" class="btn btn-primary">Sửa</a>
+							<button class="btn btn-danger">Xóa</button>
+							</td>
+						</tr>
+                    {{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

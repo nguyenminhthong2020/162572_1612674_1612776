@@ -1,0 +1,44 @@
+<div class="container" style="margin-top: 72px;">
+	<div class="row" style="margin-bottom: 35px;text-align: right;" >
+		<div class="col-md-12">
+			<a href="../addCate" class="btn btn-success" style="font-weight: bold;font-size: 23px;">
+			<i class="fa fa-plus"></i>THÊM CHUYÊN MỤC</a>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" style="margin-bottom: 15px;">
+			<h2 style="font-weight: bold; color: #029a00">DANH SÁCH CHUYÊN MỤC</h2>
+		</div>
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead class="thead-dark" style="font-size: 17px;text-align: left;">
+						<tr>
+							<th>ID</th>
+							<th>Chuyên mục</th>
+							<th>Chuyên mục cha</th>
+							<th>Số bài viết</th>
+							<th>Thao tác</th>
+						</tr>
+					</thead>
+					<tbody style="font-size: 16px;background-color: white;">
+                        {{#each listCate}}
+						<tr>
+							<td>{{id}}</td>
+							<td>{{name}}</td>
+							<td>{{itsParent}}</td>
+                            <td>{{amount}}</td>
+							<td>
+							<a href="/categories/{{id}}" class="btn btn-info">Xem</a>
+                            <a href="../editCategory/{{id}}" class="btn btn-primary">Sửa</a>
+							<button class="btn btn-danger">Xóa</button>							
+							</td>
+						</tr>
+                        {{/each}}		
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div> 

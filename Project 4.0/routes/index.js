@@ -1,7 +1,7 @@
 var express= require('express');
-var index = require('../models/index.model'); // không dùng =>thay thế bằng các model cụ thể
 var postdb=require('../models/post.model');
 var catedb=require('../models/category.model');
+var auth = require('../middlewares/auth.mdw');
 var dateFormat = require('dateformat');
 var router=express.Router();
 
@@ -10,7 +10,10 @@ router.use('/categories',require(__dirname+'/categories'));
 router.use('/posts',require(__dirname+'/posts'));
 
 // mapping trang admin, editor, writter
-
+router.use("/login", auth.all, require(__dirname + "/login"));
+router.use('/admin',auth.admin,require(__dirname+'/admin/index'));
+router.use('/editor',auth.editor,require(__dirname+'/editor/index'));
+router.use('/writter',auth.writter,require(__dirname+'/writter/index'));
 
 router.get('/',(req,res,next)=>{
     var topPost=postdb.getTopPost();
@@ -26,6 +29,9 @@ router.get('/',(req,res,next)=>{
         topCate,
         cateAll])
         .then( values =>{
+            // Lấy ra tên đăng nhập hiện tại
+
+
             var listTopPost=values[0];
             // Lấy ra (tên) chuyên mục từ category_id, định dạng ngày chuẩn
             for (const item of listTopPost) {
@@ -59,30 +65,25 @@ router.get('/',(req,res,next)=>{
                     var childrenMenu = values[4].filter(x => x.parent_id == item.id);
                     item['childs'] = childrenMenu;
                 }
-            }                
-        //console.log(rows);
+            }
+        var userName="Đăng nhập";
+        if(req.session.user)
+            userName=req.session.user.name;
+        //console.log(res.session.userName);
         res.render('home', {
         listTopPost: listTopPost,
         listTopView: listTopView,
         listNewPost: listNewPost,
-        parentMenu: parentMenu
+        parentMenu: parentMenu,
+        userName: userName
         })
     }).catch(next)
 })
 
-// Nháp: localhost:3003/bonus =>> hiển thị tiêu đề của một bài viết
-router.get('/bonus',(req,res,next)=>{
-    Promise.all([
-        catedb.getAllCategory(),
-        postdb.getAllPost()])
-        .then(([cate,post]) =>{
-        console.log("______loading post + cate ______ and print console the category table");
-        console.log(res.locals.lcCategories)
-        var str=`${cate[2].id} +++  ${post[1].views}`;
-        res.end(str)
-        //res.end(user.)
-        //res.end("bonus")
-    }).catch(next)
+router.get('/log-out', (req, res) => {
+    req.logOut();    
+    req.session.user=null; // giải phóng phiên đăng nhập lưu cục bộ
+    res.redirect('/');
 })
 
 module.exports=router;
