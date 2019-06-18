@@ -4,7 +4,7 @@ var getAllPost = () =>{
 }
 var getTopPost = () => {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT * FROM  POSTS WHERE VIEWS >3000 LIMIT 4`;
+        var sql = `SELECT * FROM  POSTS WHERE PREMIUM_STATUS =0 AND VIEWS >5000 LIMIT 4`;
         var conn = db.getConn();
         conn.connect();
         conn.query(sql, (err, value) => {
@@ -16,7 +16,7 @@ var getTopPost = () => {
 }
 var getTopView = () => {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT * FROM  POSTS WHERE VIEWS > 2000 LIMIT 10`;
+        var sql = `SELECT * FROM  POSTS WHERE PREMIUM_STATUS =0 AND VIEWS >3000 LIMIT 10`;
         var conn = db.getConn();
         conn.connect();
         conn.query(sql, (err, value) => {
@@ -28,7 +28,7 @@ var getTopView = () => {
 }
 var getNewPost = () => {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT * FROM posts WHERE posts.post_date + interval 10 day > curdate() + 30`;
+        var sql = `SELECT * FROM POSTS WHERE PREMIUM_STATUS =0 AND POST_DATE + interval 10 day > curdate() + 30`;
         var conn = db.getConn();
         conn.connect();
         conn.query(sql, (err, value) => {
@@ -54,6 +54,11 @@ var addPost = (entity) => {
     console.log('IM DOING add');
     return db.load(sql);
 }
+var setStatus = (idF,entity)=>{
+    var sql=`UPDATE posts SET status=${entity.status} WHERE id=${idF}`;
+    console.log('IM DOING update');
+    return db.load(sql);
+}
 
 module.exports = {
     getAllPost: getAllPost,
@@ -62,5 +67,6 @@ module.exports = {
     getNewPost: getNewPost,
     findById:findById,
     updatePost:updatePost,
-    addPost:addPost
+    addPost:addPost,
+    setStatus: setStatus
 };

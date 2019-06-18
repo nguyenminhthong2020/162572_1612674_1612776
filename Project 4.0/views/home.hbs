@@ -81,13 +81,14 @@
 				<h2 class="ts-title float-left">:: Chuyên mục nổi bật</h2>
 			</div>
 			<div class="product-slider owl-carousel">
-				{{#each topCate}}
+				{{#each listTopCate}}
 				<div class="product-item">
-					<h3 class="text-warning">{{math @index "+" 1}}</h3>
+					<h4 class="text-warning">{{math @index "+" 1}} :: <a class="text-secondary" href="/categories/{{id}}">{{name}}</a></h4>
+					<a><img class="imgbaiviet" src={{itsBestPost.avatar}}></a>
 					<div class="card" style="border: none;">
 					  <div class="card-body">
-					    <a href="/posts/{{id}}" class="textHover"><h5 class="card-title tieude">{{name}}</h5></a>
-					    <p class="card-text">{{update_at}}></p>
+					    <a href="/posts/{{itsBestPost.id}}" class="textHover"><h5 class="card-title tieude">{{itsBestPost.title}}</h5></a>
+					    <a href="/categories/{{id}}">{{name}}</a>
 					  </div>
 					</div>
 				</div>

@@ -22,12 +22,14 @@ router.get('/',(req,res,next)=>{
     var topCate=catedb.getTopCategory();
     // set up main.hbs
     var cateAll=catedb.getAllCategory();
+    var postAll=postdb.getAllPost();
     Promise.all([
         topPost,
         topView,
         newPost,
         topCate,
-        cateAll])
+        cateAll,
+        postAll,])
         .then( values =>{
             // Lấy ra tên đăng nhập hiện tại
 
@@ -57,6 +59,10 @@ router.get('/',(req,res,next)=>{
                 item['shortDate'] = shortDate;
             }
             var listTopCate=values[3];
+            for(const item of listTopCate){
+                var itsBestPost=values[5].filter(x=>x.category_id== item.id);
+                item['itsBestPost']=itsBestPost[0];
+            }
             var parentMenu = [];
             if (values[4].length > 0) {
                 parentMenu = values[4].filter(x => x.parent_id == 0);
@@ -74,6 +80,7 @@ router.get('/',(req,res,next)=>{
         listTopPost: listTopPost,
         listTopView: listTopView,
         listNewPost: listNewPost,
+        listTopCate: listTopCate,
         parentMenu: parentMenu,
         userName: userName
         })

@@ -4,11 +4,7 @@ var getAllCategory = () =>{
 }
 var getTopCategory = () => {
     return new Promise((resolve, reject) => {
-        var sql = `SELECT categories.id , categories.name ,COUNT(*) as SL 
-        FROM categories JOIN posts ON posts.category_id = categories.id 
-        GROUP BY categories.id,categories.name
-        ORDER BY COUNT(*) DESC
-        LIMIT 10 OFFSET 0`;
+        var sql = `SELECT * FROM CATEGORIES LIMIT 10`;
         var conn = db.getConn();
         conn.connect();
         conn.query(sql, (err, value) => {

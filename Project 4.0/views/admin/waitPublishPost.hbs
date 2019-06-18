@@ -35,7 +35,7 @@
 							<a href="/posts/{{id}}" class="btn btn-info">Xem</a>
 							<a href="../edit-post/{{id}}" class="btn btn-primary">Sửa</a>
 							<button class="btn btn-danger">Xóa</button>
-							<button class="btn btn-warning">Xuất bản</button>
+							<button onclick="location.href='../action-publish-post/{{id}}'" class="btn btn-warning">Xuất bản</button>
 							</td>
 						</tr>
                     {{/each}}
@@ -45,3 +45,19 @@
 		</div>
 	</div>
 </div>
+<script>
+	function loadEdit(id) {
+    $.ajax({
+      url: '/admin/manage-category/edit/' + id,
+      type: 'GET',
+      success: function (response) {
+        $('#editName').val(response.name);
+        loadSelectForEdit(response);
+        $('#formEditCategory').attr('action', '/admin/manage-category/edit/' + id);
+      },
+      error: function (error) {
+        console.log(error);
+      }
+    });
+  }
+</script>

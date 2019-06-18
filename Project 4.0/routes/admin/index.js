@@ -293,5 +293,83 @@ router.post('/manage-category/add', (req, res) => {
         console.log(err);
         res.redirect('/admin');
     })
-}); 
+});
+// xuất bản bài viết: set thuộc tính status=1
+router.get('/action-publish-post/:id', function (req, res) {
+    var cateAll = catedb.getAllCategory();
+    var tagAll = tagdb.getAllTag();
+    var id=req.params.id;
+    Promise.all([cateAll, tagAll]).then(values => {
+        var entity=values[1].filter(x=>x.id==id);
+        entity.status=1; // set status = 1 <=> đã xuất bản
+        var rs = postdb.setStatus(id,entity);
+        console.log(entity);
+        rs.then(rs => { 
+            console.log('Publish success');
+            alert('Publish successfully');
+            res.redirect('/admin');
+            res.json(200);
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/admin');
+        });        
+        res.redirect('/admin');       
+    })
+        .catch(err => {
+            console.log(err);
+            res.redirect('/admin');
+        })
+});
+// Duyệt bài viết: set thuộc tính status=2
+router.get('/action-approve-post/:id', function (req, res) {
+    var cateAll = catedb.getAllCategory();
+    var tagAll = tagdb.getAllTag();
+    var id=req.params.id;
+    Promise.all([cateAll, tagAll]).then(values => {
+        var entity=values[1].filter(x=>x.id==id);
+        entity.status=2; // set status = 2 <=> đã duyệt, chờ xuất bản
+        var rs = postdb.setStatus(id,entity);
+        console.log(entity);
+        rs.then(rs => { 
+            console.log('Publish success');
+            alert('Publish successfully');
+            res.redirect('/admin/manage-post/waitApprove');
+            res.json(200);
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/admin/manage-post/waitApprove');
+        });        
+        res.redirect('/admin/manage-post/waitApprove');
+    })
+        .catch(err => {
+            console.log(err);
+            res.redirect('/admin/manage-post/waitApprove');
+        })
+});
+// Từ chối bài viết nhưng không xóa khỏi database, set status = 4
+router.get('/action-deny-post/:id', function (req, res) {
+    var cateAll = catedb.getAllCategory();
+    var tagAll = tagdb.getAllTag();
+    var id=req.params.id;
+    Promise.all([cateAll, tagAll]).then(values => {
+        var entity=values[1].filter(x=>x.id==id);
+        entity.status=4; // set status = 4 <=> nằm ngoài phạm vi hiển thị bài viết (1-3)
+        var rs = postdb.setStatus(id,entity);
+        console.log(entity);
+        rs.then(rs => { 
+            console.log('Publish success');
+            alert('Publish successfully');
+            res.redirect('/admin/manage-post/waitApprove');
+            res.json(200);
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/admin/manage-post/waitApprove');
+        });        
+        res.redirect('/admin/manage-post/waitApprove');
+    })
+        .catch(err => {
+            console.log(err);
+            res.redirect('/admin/manage-post/waitApprove');
+        })
+});
 module.exports=router;
