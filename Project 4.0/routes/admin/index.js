@@ -8,7 +8,7 @@ var post_tageddb=require('../../models/post_taged.model');
 var dateFormat = require('dateformat');
 var router=express.Router();
 
-router.use('/manage-category/all',require(__dirname+'/manageCategory'));
+router.use('/manage-category',require(__dirname+'/manageCategory'));
 
 
 router.get('/', function (req, res) {
@@ -209,4 +209,89 @@ router.post('/edit-post/:id', (req, res) => {
         res.redirect('/admin');
     })
 });
+router.get('/edit-category/:id', (req, res) => {
+    var id = req.params.id;
+    var cateAll = catedb.getAllCategory();
+  
+    Promise.all([cateAll]).then(values => {
+        var thisCate=values[0].filter(x=>x.id==id);
+        var parent_id=0;
+        var parent_name="Không có";
+        if(thisCate[0].parent_id)
+        {
+            var itsParent=values[0].filter(x=>x.id==thisCate[0].parent_id);
+            parent_id=itsParent[0].id;
+            parent_name=itsParent[0].name;
+        }       
+        var listParentCate=values[0].filter(x=>x.parent_id==0);
+        res.render("admin/editCategory", { title: "edit-category", layout: "admin.hbs", listParentCate: listParentCate, thisCate: thisCate[0], parent_id: parent_id, parent_name: parent_name, id: id });
+    })
+        .catch(err => console.log(err));
+});
+router.post('/edit-category/:id', (req, res) => {
+    var id = req.params.id;
+    var entity = catedb.findById(id);
+    entity.then(entity => { 
+        entity.name = req.body.p_title;
+        entity.parent_id = req.body.p_parent;
+        var rs = catedb.updateCate(id,entity);
+        console.log(entity);
+        rs.then(rs => { 
+            console.log('Update success');
+            res.redirect('/admin');
+            res.json(200);
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/admin');
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect('/admin');
+    })
+});
+router.get('/manage-category/add', (req, res) => {
+    var cateAll = catedb.getAllCategory();  
+    Promise.all([cateAll]).then(values => {
+        var listParentCate=values[0].filter(x=>x.parent_id==0);
+        res.render("admin/addCategory", { title: "add-category", layout: "admin.hbs", listParentCate: listParentCate});
+    })
+        .catch(err => console.log(err));
+});
+router.post('/manage-category/add', (req, res) => {
+    var idCopy = 1;
+    var cateCopy = catedb.findById(idCopy);
+    var cateAll=catedb.getAllCategory();
+    Promise.all([
+        cateCopy,
+        cateAll])
+        .then(values => {
+        var listCate=values[1];
+        // tìm ID lớn nhất
+        var maxID=1;
+        for(const item of listCate)
+        {
+            if(maxID<item.id)
+            maxID=item.id;
+        }
+        var entity=values[0];
+        entity.name = req.body.p_title;
+        entity.parent_id = req.body.p_parent;
+        entity.id=maxID+1;
+        var rs = catedb.addCate(entity);
+        console.log(entity);
+        rs.then(rs => { 
+            console.log('ADD success');
+            res.redirect('/admin');
+            res.json(200);
+        }).catch(err => {
+            console.log(err);
+            res.redirect('/admin');
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect('/admin');
+    })
+}); 
 module.exports=router;

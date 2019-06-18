@@ -18,7 +18,25 @@ var getTopCategory = () => {
         });
     })
 }
+var findById = (id) => {
+    return db.findById('categories', id);
+}
+var updateCate = (idF, entity) => {
+    //var sql=`UPDATE posts SET category_id=5 WHERE id=${id}`;
+    var sql=`UPDATE categories SET name = "${entity.name}", parent_id=${entity.parent_id} WHERE id=${idF}`;
+    console.log('updating categories');
+    return db.load(sql);
+}
+var addCate = (entity) => {
+    //var sql=`UPDATE posts SET category_id=5 WHERE id=${id}`;
+    var sql=`INSERT INTO categories (id,name,parent_id,created_at, updated_at) VALUES (${entity.id},"${entity.name}",${entity.parent_id},"${entity.created_at}", "${entity.updated_at}")`;
+    console.log('adding categories');
+    return db.load(sql);
+}
 module.exports = {
     getAllCategory: getAllCategory,
-    getTopCategory: getTopCategory
+    getTopCategory: getTopCategory,
+    findById: findById,
+    updateCate: updateCate,
+    addCate: addCate
 };

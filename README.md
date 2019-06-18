@@ -1,4 +1,4 @@
-# 162572_1612674_1612776
+﻿# 162572_1612674_1612776
 Đồ án Phát triển ứng dụng Web CQ2016/32
 
 ## Link Github :
@@ -13,6 +13,8 @@ Mã số | Họ tên | Email | Phone
 1612674 | Nguyễn Minh Thông | 1612674@student.hcmus.edu.vn | 0382289479  
 1612572 | Phạm Đình Sỹ | |
 1612776 | Phan Văn Anh Tuấn | |
+
+//Cập nhật gần nhất: 10:08 18/06/2019
 
 
 

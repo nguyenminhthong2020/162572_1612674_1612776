@@ -4,7 +4,7 @@ var catedb=require('../../models/category.model');
 var dateFormat = require('dateformat');
 var router=express.Router();
 
-router.get('/',(req,res,next)=>{
+router.get('/all',(req,res,next)=>{
     var postAll=postdb.getAllPost();
     var cateAll=catedb.getAllCategory();
     Promise.all([
