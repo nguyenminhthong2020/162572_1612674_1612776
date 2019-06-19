@@ -59,7 +59,11 @@ var setStatus = (idF,entity)=>{
     console.log('IM DOING update');
     return db.load(sql);
 }
-
+var deletePost = (idF)=>{
+    var sql=`DELETE FROM posts WHERE id=${idF}`;
+    console.log('IM DOING delete');
+    return db.load(sql);
+}
 module.exports = {
     getAllPost: getAllPost,
     getTopPost: getTopPost,
@@ -68,5 +72,6 @@ module.exports = {
     findById:findById,
     updatePost:updatePost,
     addPost:addPost,
-    setStatus: setStatus
+    setStatus: setStatus,
+    deletePost: deletePost
 };

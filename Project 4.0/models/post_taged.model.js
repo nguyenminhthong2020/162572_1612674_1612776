@@ -64,6 +64,12 @@ function countPage(id) {
         })
     })
 }
+var deleteTagbyPostID = (postID)=>{
+    var sql=`DELETE FROM post_tageds WHERE post_id=${postID}`;
+    return db.load(sql);
+}
+
+
 
 module.exports = {
     getAllPostTag: getAllPostTag,
@@ -71,6 +77,7 @@ module.exports = {
     findTagByPostId: findTagByPostId,
     deleteTagedPostById: deleteTagedPostById,
     findPostsByTag: findPostsByTag,
+    deleteTagbyPostID: deleteTagbyPostID,
     countPage,
     getPage
 }

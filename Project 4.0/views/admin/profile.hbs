@@ -1,0 +1,67 @@
+<section class="top-letest-product-section">
+        <div class="container">
+          <div class="ts-grid-box clearfix ts-category-title">
+            <h2 class="ts-title float-left"> Tài khoản</h2>
+          </div>
+
+          <div class="container bootstrap snippet">
+            <div class="row">
+              <div class="col-sm-3 text-center"><h3 class="text-muted">Ảnh mô tả</h3></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3"><!--left col-->              
+
+                <div class="text-center">
+                  <img src="../noImage.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <label class="btn btn-default btn-file bg-info mt-2">Thêm ảnh..<input type="file" style="display: none;"></label>        
+                </div>
+
+              </div><!--/col-3-->
+              <div class="col-sm-9">
+                <div class="tab-content">
+                  <div class="tab-pane active" id="home">
+                    <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_name"><h4 class="text-muted">&nbsp;Họ tên:</h4></label>
+                          <input type="text" class="form-control" name="p_name" id="p_name" placeholder="Họ tên" title="Nhập .." value="{{curUser.name}}">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_birthday"><h4 class="text-muted">&nbsp;Ngày sinh:</h4></label>
+                          <input type="text" class="form-control" name="p_birthday" id="p_birthday" value="{{curUser.shortBirthday}}">
+
+                        </div>
+                      </div>
+                      <div class="form-group">                          
+                        <div class="col-xs-6">
+                          <label for="p_email"><h4 class="text-muted">&nbsp;Email:</h4></label>
+                          <input type="text" class="form-control" name="p_email" id="p_email" placeholder="" title="Nhập .." value="{{curUser.email}}">
+                        </div>
+                      </div>
+                      
+                    <div class="form-group">                          
+                      <div class="col-xs-6">
+                        <label for="p_created"><h4 class="text-muted">&nbsp;Ngày bắt đầu:</h4></label>
+                        <input type="text" class="form-control" name="p_created" id="p_created" value="{{curUser.shortCreateDate}}">
+                        <!-- <input type="text" class="form-control" name="p_title" id="p_title" placeholder="Họ tên" title="Nhập .."> -->
+                      </div>
+                    </div>
+                  <div class="form-group">
+                   <div class="col-xs-12">
+                    <br>
+                    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                  </div>
+                </div>
+              </form>
+              
+            </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+      </div><!--/row-->
+    </div><!--container-fluid-->
+  </section>
