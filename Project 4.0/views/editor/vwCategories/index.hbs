@@ -1,0 +1,34 @@
+<div class="card shadow">
+
+<h4 class="card-header">
+    CATEGORIES    
+</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">CatID</th>
+      <th scope="col">CatName</th>
+      <th scope="col">
+        <a class="btn btn-outline-success" href="/admin/categories/add" role="button">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add Category
+        </a>
+      </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.ctg}}
+    <tr>
+      <th scope="row">{{ID}}</th>
+      <td>{{NgayDang}}</td>
+      <th scope="col">
+        <a class="btn btn-primary btn-sm" href="javascript:;" role="button">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+      </th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

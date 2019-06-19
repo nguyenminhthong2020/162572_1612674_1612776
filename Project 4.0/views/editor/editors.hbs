@@ -1,0 +1,43 @@
+<div class="container" style="margin-top: 72px;">
+	<div class="row" style="margin-bottom: 35px;text-align: right;" >
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" style="margin-bottom: 15px;">
+			<h2 style="font-weight: bold; color: #029a00">DANH SÁCH BIÊN TẬP VIÊN</h2>
+		</div>
+		<!-- /.panel-heading -->
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead class="thead-dark" style="font-size: 17px;text-align: left;">
+						<tr>
+							<th>ID</th>
+							<th>Họ tên</th>
+							<th>Ngày sinh</th>
+							<th>Email</th>
+							<th>Ngày đăng kí</th>
+							<th>Ngày hết hạn</th>
+							<th>Thao tác</th>
+						</tr>
+					</thead>
+					<tbody style="font-size: 16px;background-color: white;">
+                        {{#each listUser}}
+						<tr>
+							<td>{{id}}</td>
+							<td>{{name}}</td>
+							<td>{{birthday}}</td>
+							<td>{{email}}</td>
+							<td>{{shortCreateDate}}</td>
+							<td>{{shortExpiryDate}}</td>
+							<td>
+							<a href="/users/{{id}}" class="btn btn-info">Xem</a>
+                            <a href="../edit-user/{{id}}" class="btn btn-primary">Sửa</a>
+							</td>
+						</tr>
+                        {{/each}}		
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div> 

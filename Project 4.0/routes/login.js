@@ -36,13 +36,13 @@ router.post('/', (req, res, next) => {
                         temp = '/';
                         break;
                     case 2:
-                        temp = '/';
+                        temp = '/subscriber/profile/index';
                         break;
                     case 3:
-                        temp = '/writer';
+                        temp = '/writter';
                         break;
                     case 4:
-                        temp = '/editor';
+                        temp = '/editor/manage-post/waitPublish';
                         break;
                     case 5:
                          temp = '/admin';

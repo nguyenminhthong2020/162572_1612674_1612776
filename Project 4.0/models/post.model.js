@@ -14,6 +14,18 @@ var getTopPost = () => {
         });
     })
 }
+var getPremiumPost = () => {
+    return new Promise((resolve, reject) => {
+        var sql = `SELECT * FROM  POSTS WHERE PREMIUM_STATUS =1 AND VIEWS >5000 LIMIT 4`;
+        var conn = db.getConn();
+        conn.connect();
+        conn.query(sql, (err, value) => {
+            if (err ) reject(err);
+            else resolve(value);
+            conn.end();
+        });
+    })
+}
 var getTopView = () => {
     return new Promise((resolve, reject) => {
         var sql = `SELECT * FROM  POSTS WHERE PREMIUM_STATUS =0 AND VIEWS >3000 LIMIT 10`;
@@ -67,6 +79,7 @@ var deletePost = (idF)=>{
 module.exports = {
     getAllPost: getAllPost,
     getTopPost: getTopPost,
+    getPremiumPost: getPremiumPost,
     getTopView: getTopView,
     getNewPost: getNewPost,
     findById:findById,

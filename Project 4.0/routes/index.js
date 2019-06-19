@@ -16,6 +16,7 @@ router.use("/login", auth.all, require(__dirname + "/login"));
 router.use('/admin',auth.admin,require(__dirname+'/admin/index'));
 router.use('/editor',auth.editor,require(__dirname+'/editor/index'));
 router.use('/writter',auth.writter,require(__dirname+'/writter/index'));
+router.use('/subscriber',auth.writter,require(__dirname+'/subscriber/index'));
 
 router.get('/',(req,res,next)=>{
     var topPost=postdb.getTopPost();
@@ -25,18 +26,27 @@ router.get('/',(req,res,next)=>{
     // set up main.hbs
     var cateAll=catedb.getAllCategory();
     var postAll=postdb.getAllPost();
+    var postPremium=postdb.getPremiumPost();
     Promise.all([
         topPost,
         topView,
         newPost,
         topCate,
         cateAll,
-        postAll,])
+        postAll,
+        postPremium,])
         .then( values =>{
             // Lấy ra tên đăng nhập hiện tại
-
-
-            var listTopPost=values[0];
+            var temp="";
+            if(req.session.user)
+            {
+                var listTopPost=values[6];
+                temp="_ Premium";
+            }
+            else
+            {
+                var listTopPost=values[0];                
+            }
             // Lấy ra (tên) chuyên mục từ category_id, định dạng ngày chuẩn
             for (const item of listTopPost) {
                 var itsCate = values[4].filter(x => x.id == item.category_id);
@@ -84,7 +94,8 @@ router.get('/',(req,res,next)=>{
         listNewPost: listNewPost,
         listTopCate: listTopCate,
         parentMenu: parentMenu,
-        userName: userName
+        userName: userName,
+        temp: temp
         })
     }).catch(next)
 })
