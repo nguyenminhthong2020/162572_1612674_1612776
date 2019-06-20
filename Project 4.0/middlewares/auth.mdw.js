@@ -51,5 +51,19 @@ module.exports = {
         //(createError(403));
         res.end('You have no permission to access writter-page');
     }
+  },
+  subscriber: (req, res, next) => {
+    if (!req.user) {
+      req.session.redirectTo = "/subscriber";
+      res.redirect('/login');
+    }
+    else {
+      var user = req.user;
+      if (user.role_id == 2)
+        next();
+      else
+        //(createError(403));
+        res.end('You have no permission to access subscriber-page');
+    }
   }
 } 

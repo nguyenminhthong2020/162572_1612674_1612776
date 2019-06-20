@@ -13,10 +13,11 @@ router.use('/posts',require(__dirname+'/posts'));
 
 // mapping trang admin, editor, writter
 router.use("/login", auth.all, require(__dirname + "/login"));
+router.use("/signup", auth.all, require(__dirname + "/signup"));
 router.use('/admin',auth.admin,require(__dirname+'/admin/index'));
 router.use('/editor',auth.editor,require(__dirname+'/editor/index'));
 router.use('/writter',auth.writter,require(__dirname+'/writter/index'));
-router.use('/subscriber',auth.writter,require(__dirname+'/subscriber/index'));
+router.use('/subscriber',auth.subscriber,require(__dirname+'/subscriber/index'));
 
 router.get('/',(req,res,next)=>{
     var topPost=postdb.getTopPost();

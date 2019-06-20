@@ -137,6 +137,7 @@ router.post('/manage-post/add', (req, res) => {
             entity.thumb_img = req.body.p_img;
             entity.summary_content = req.body.p_short;
             entity.category_id = req.body.p_category;
+            entity.status=3; // status =3 : chờ duyệt
             entity.created_by = 6; // là ID của writter
             entity.id = maxID + 1;
             var rs = postdb.addPost(entity);

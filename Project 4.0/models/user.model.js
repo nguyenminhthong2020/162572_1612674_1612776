@@ -15,6 +15,11 @@ var updateUser = (idF, entity) => {
     var sql=`UPDATE user SET name = "${entity.name}", birthday = "${entity.birthday}", email = "${entity.email}", created_at = "${entity.created__at}" WHERE id=${idF}`;
     return db.load(sql);
 }
+var addUser = (entity) => {
+    //var sql=`UPDATE posts SET category_id=5 WHERE id=${id}`;
+    var sql=`INSERT INTO users (id,username,password) VALUES (${entity.id},"${entity.username}","${entity.password}")`;
+    return db.load(sql);
+}
 
 
 module.exports = {
